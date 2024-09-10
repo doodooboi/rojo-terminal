@@ -1,0 +1,23 @@
+{
+  "name": "terminal",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+				"$ignoreUnknownInstances": true,
+        "$path": "src/shared"
+    },
+		
+		"ServerStorage": {
+			"$ignoreUnknownInstances": true
+		},
+
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    }
+  }
+}
