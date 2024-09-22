@@ -1,7 +1,5 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-local RSDOS = ReplicatedStorage['RS-DOS']
-local CommandBuilder = require(script.Parent.builder)
+local RSDOS = script:FindFirstAncestor("RS-DOS")
+local CommandBuilder = require(script:FindFirstAncestor("bin").builder)
 
 local result = require(RSDOS.result)
 

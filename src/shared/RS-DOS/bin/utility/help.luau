@@ -1,7 +1,5 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-local RSDOS = ReplicatedStorage['RS-DOS']
-local CommandBuilder = require(script.Parent.builder)
+local RSDOS = script:FindFirstAncestor("RS-DOS")
+local CommandBuilder = require(script:FindFirstAncestor("bin").builder)
 
 local result = require(RSDOS.result)
 local utility = require(RSDOS.utility)
@@ -19,7 +17,7 @@ return CommandBuilder.create({
 	description = "Prints all valid commands and aliases"
 }, {}, function(elevated, args, io, pane)
 	if not bin then
-		bin = require(script.Parent)
+		bin = require(script:FindFirstAncestor("bin"))
 	end
 
 	io:write(`Valid commands:`)

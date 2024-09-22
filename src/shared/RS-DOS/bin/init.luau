@@ -1,5 +1,4 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local RSDOS = ReplicatedStorage["RS-DOS"]
+local RSDOS = script.Parent
 
 local types = require(RSDOS.types)
 local result = require(RSDOS.result)
@@ -16,8 +15,8 @@ local errors = {} :: {string}
 local seen = {"builder", "template"}
 
 local commands: types.Map<string, types.Command> = {}; do
-	for _, child: ModuleScript in ipairs(script:GetChildren()) do
-		if table.find(seen, child.Name) then continue end
+	for _, child: ModuleScript in ipairs(script:GetDescendants()) do
+		if not child:IsA("ModuleScript") or table.find(seen, child.Name) then continue end
 		table.insert(seen, child.Name)
 
 		local success, command: types.Command = xpcall(require, function(err)

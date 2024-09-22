@@ -1,14 +1,12 @@
-local RSDOS = script.Parent.Parent
+local RSDOS = script:FindFirstAncestor("RS-DOS")
+local CommandBuilder = require(script:FindFirstAncestor("bin").builder)
 
--- local io = require(RSDOS.iostream)
 local utility = require(RSDOS.utility)
 local result = require(RSDOS.result)
 local types = require(RSDOS.types)
 local path = require(RSDOS.path)
 
 local xterm256 = require(RSDOS.components.xterm256)
-
-local CommandBuilder = require(script.Parent.builder)
 
 return CommandBuilder.create({
 	name = 'ls',

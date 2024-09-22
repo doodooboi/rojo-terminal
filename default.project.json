@@ -9,7 +9,12 @@
     },
 		
 		"ServerStorage": {
-			"$ignoreUnknownInstances": true
+			"$ignoreUnknownInstances": true,
+			"$path": "src/server/modules"
+		},
+
+		"ServerScriptService": {
+			"$path": "src/server/scripts"
 		},
 
     "StarterPlayer": {
